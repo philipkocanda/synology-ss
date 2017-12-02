@@ -1,5 +1,7 @@
 # Synology Surveillance Station CLI
 
+Manage "Home Mode" status, toggle camera enabled/disabled state, and list the available cameras. 
+
 How it works:
 
 ```

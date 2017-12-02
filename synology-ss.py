@@ -1,9 +1,6 @@
 #!/usr/bin/python
 
-import sys
-import json
-import urllib
-import urllib2
+import os, sys, json, urllib, urllib2
 
 AUTH_URL = "%s/webapi/auth.cgi?api=SYNO.API.Auth&method=Login&version=3&account=%s&passwd=%s&session=SurveillanceStation"
 API_URL = "%s/webapi/entry.cgi?%s&_sid=%s"
@@ -169,10 +166,15 @@ def set_camera_state(id, state):
 def load_config():
   global config
 
-  file = open('config.json','r')
+  path = os.path.realpath(
+      os.path.join(os.getcwd(), os.path.dirname(__file__))
+  )
+
+  config_file = '%s/config.json' % path
+
+  file = open(config_file,'r')
   config = json.loads(file.read())
   file.close()
-
 
 def is_truthy(var):
   return var == 'true' or var == 'on' or var == 'enabled' or var == 'enable' or var == 'yes'

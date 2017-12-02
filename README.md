@@ -39,3 +39,7 @@ Make sure you have a `config.json` file in the same directory as the script. A `
   "url": "https://your-synology-nas.com:5001"
 }
 ```
+
+# Debugging
+
+If something isn't working out, pass the `--debug` option to see what's going on.
